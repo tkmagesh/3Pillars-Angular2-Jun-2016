@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bug Tracker</title>
+	<style>
+		section{
+			margin-bottom: 10px;
+		}
+		.closed{
+			color : red;
+			text-decoration: line-through;
+			font-style: italic;
+		}
+		ol{
+			width: 400px;
+			list-style: none;
+		}
+		li{
+			margin-bottom: 5px;
+			border: 1px solid gray;
+			background-color: #e7e7e7;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		li span{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Bug Tracker</h1>
+	<hr>
+	<section class="stats">
+		<span class="closed">2</span>
+		<span>/</span>
+		<span>5</span>
+	</section>
+	<section class="search">
+		<label for="">Search :</label>
+		<input type="text" name="" id=""></section>
+	<section class="sort">
+		<label for="">Sort :</label>
+		<input type="text" name="" id="">
+	</section>
+	<section class="bugs">
+		<label for="">Bug :</label>
+		<input type="text" name="" id="">
+		<input type="button" value="Add New">
+		<ol>
+			<li class="closed"><span>Object reference not found</span></li>
+			<li><span>User data validation failure</span></li>
+		</ol>
+		<input type="button" value="Remove Closed">
+	</section>
+</body>
+</html>
