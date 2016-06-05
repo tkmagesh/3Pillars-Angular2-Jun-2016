@@ -11,10 +11,7 @@
 	<input type="text" name="" id="">
 </section>
 <section class="bugs">
-	<label for="">Bug :</label>
-	<input type="text" [(ngModel)]="newBugName">
-
-	<input type="button" value="Add New" (click)="addNew()">
+	<bug-editor (bugAdded) = "onBugAdded($event)"></bug-editor>
 	<ol>
 		<li *ngFor="let bug of bugs">
 			<bug-item [data]="bug"></bug-item>
