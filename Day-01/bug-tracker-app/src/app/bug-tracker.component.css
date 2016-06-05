@@ -1,0 +1,17 @@
+section{
+	margin-bottom: 10px;
+}
+
+ol{
+	width: 400px;
+	list-style: none;
+}
+li{
+	margin-bottom: 5px;
+	border: 1px solid gray;
+	background-color: #e7e7e7;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+

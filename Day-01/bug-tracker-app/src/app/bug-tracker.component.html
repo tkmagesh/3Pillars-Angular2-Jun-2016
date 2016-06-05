@@ -1,0 +1,25 @@
+<section class="stats">
+	<span class="closed">{{bugs | closedCount}}</span>
+	<span>/</span>
+	<span>{{bugs.length}}</span>
+</section>
+<section class="search">
+	<label for="">Search :</label>
+	<input type="text" name="" id=""></section>
+<section class="sort">
+	<label for="">Sort :</label>
+	<input type="text" name="" id="">
+</section>
+<section class="bugs">
+	<label for="">Bug :</label>
+	<input type="text" [(ngModel)]="newBugName">
+
+	<input type="button" value="Add New" (click)="addNew()">
+	<ol>
+		<li *ngFor="let bug of bugs">
+			<bug-item [data]="bug"></bug-item>
+		</li>
+		
+	</ol>
+	<input type="button" value="Remove Closed">
+</section>
