@@ -1,5 +1,6 @@
 import { Component, Input} from '@angular/core';
-import { Bug } from '../models/Bug'
+import { Bug } from '../models/Bug';
+import { BugStorageService } from '../services/BugStorageService';
 
 @Component({
 	moduleId: module.id,
@@ -11,6 +12,9 @@ export class BugItem {
 	@Input()
 	data: Bug;
 
+	constructor(private _bugStorageService : BugStorageService){
+		console.log(this._bugStorageService.id);
+	}
 	toggle(bug: Bug): void {
 		bug.toggle();
 	}

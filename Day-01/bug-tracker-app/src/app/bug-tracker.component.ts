@@ -2,6 +2,7 @@ import { Component, OnInit  } from '@angular/core';
 import { BugItem } from './bug-item/bug-item.component';
 import { Bug } from './models/Bug';
 import { ClosedCount } from './shared/closedCount.pipe';
+import { BugStorageService } from './services/BugStorageService'
 
 @Component({
   moduleId: module.id,
@@ -9,7 +10,8 @@ import { ClosedCount } from './shared/closedCount.pipe';
   templateUrl: 'bug-tracker.component.html',
   styleUrls: ['bug-tracker.component.css'],
   directives : [BugItem],
-  pipes : [ClosedCount]
+  pipes : [ClosedCount],
+  providers : [BugStorageService]
 })
 export class BugTrackerAppComponent {
 	title: string = '';
@@ -17,17 +19,17 @@ export class BugTrackerAppComponent {
 	newBugName: string = '';
 
   	addNew() :void{
-
-			var newBugId = this.bugs.length ? this.bugs.reduce((b1, b2) => b1.id > b2.id ? b1 : b2 ).id + 1 : 1;
-			let newBug = new Bug(newBugId, this.newBugName, false);
+      let newBug = this._bugService.createNew(this.newBugName);
 			this.bugs.push(newBug);
   	}
   	
-  
+    constructor(private _bugService : BugStorageService){
+        this._bugService.id = 100;
+    }
 
   	ngOnInit(){
-			this.bugs.push(new Bug(1, "Object reference not found", false));
-			this.bugs.push(new Bug(2, "Server communication failure", true));
+      this.bugs = this._bugService.getAll();
+			
   	}
 }
  
