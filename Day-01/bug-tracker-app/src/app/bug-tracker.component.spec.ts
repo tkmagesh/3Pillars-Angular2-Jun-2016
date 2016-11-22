@@ -9,7 +9,7 @@ import { BugTrackerAppComponent } from '../app/bug-tracker.component';
 
 beforeEachProviders(() => [BugTrackerAppComponent]);
 
-describe('App: BugTracker', () => {
+/*describe('App: BugTracker', () => {
   it('should create the app',
       inject([BugTrackerAppComponent], (app: BugTrackerAppComponent) => {
     expect(app).toBeTruthy();
@@ -19,4 +19,4 @@ describe('App: BugTracker', () => {
       inject([BugTrackerAppComponent], (app: BugTrackerAppComponent) => {
     expect(app.title).toEqual('bug-tracker works!');
   }));
-});
+});*/
